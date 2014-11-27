@@ -33,13 +33,13 @@
 
     <div class="row">
 
-        <form class="form-horizontal" role="form" action="index.php" method="post">
+        <form class="form-horizontal" role="form" action="index.php" method="POST">
 
             <!--Headline-->
             <div class="form-group">
                 <label for="headline" class="col-sm-2 control-label">Headline</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="headline" placeholder="Headline">
+                    <input type="text" class="form-control" id="headline" name="headline" placeholder="Headline">
                 </div>
             </div>
 
@@ -47,7 +47,7 @@
             <div class="form-group">
                 <label for="imageFile" class="col-sm-2 control-label">Image</label>
                 <div class="col-sm-10">
-                    <input type="file" class="form-control" id="imageFile">
+                    <input type="file" class="form-control" id="imageFile" name="imageFile">
                     <p class="help-block">Upload your image.</p>
                 </div>
             </div>
@@ -56,7 +56,7 @@
             <div class="form-group">
                 <label for="caption" class="col-sm-2 control-label">Caption</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="caption" placeholder="Image caption">
+                    <input type="text" class="form-control" id="caption" name="caption" placeholder="Image caption">
                 </div>
             </div>
 
@@ -64,7 +64,7 @@
             <div class="form-group">
                 <label for="list" class="col-sm-2 control-label">List</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" id="list" placeholder="One item per line"></textarea>
+                    <textarea class="form-control" id="list" name="list" placeholder="One item per line"></textarea>
                 </div>
             </div>
 
@@ -72,7 +72,7 @@
             <div class="form-group">
                 <label for="story" class="col-sm-2 control-label">Story</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" id="story" placeholder="Some beautiful story"></textarea>
+                    <textarea class="form-control" id="story" name="story" placeholder="Some beautiful story"></textarea>
                 </div>
             </div>
 
@@ -80,7 +80,7 @@
             <div class="form-group">
                 <label for="author" class="col-sm-2 control-label">Author</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="author" placeholder="John Doe">
+                    <input type="text" class="form-control" id="author" name="author" placeholder="John Doe">
                 </div>
             </div>
 
@@ -88,7 +88,7 @@
             <div class="form-group">
                 <label for="date" class="col-sm-2 control-label">Date</label>
                 <div class="col-sm-10">
-                    <input type="datetime" class="form-control" id="date">
+                    <input type="datetime" class="form-control" id="date" name="date">
                 </div>
             </div>
 

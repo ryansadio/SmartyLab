@@ -1,87 +1,56 @@
 {config_load file="test.conf" section="setup"}
 {include file="header.tpl" title=foo}
 
-<PRE>
+<!-- Page Content -->
+<div class="container">
 
-{* bold and title are read from the config file *}
-    {if #bold#}<b>{/if}
-        {* capitalize the first letters of each word of the title *}
-        Title: {#title#|capitalize}
-        {if #bold#}</b>{/if}
+    <div class="row">
 
-    The current date and time is {$smarty.now|date_format:"%Y-%m-%d %H:%M:%S"}
+        <!-- Post Content Column -->
+        <div class="col-lg-16">
 
-    The value of global assigned variable $SCRIPT_NAME is {$SCRIPT_NAME}
+            <!-- Headline -->
+            <h1>{$smarty.post.headline}</h1>
 
-    Example of accessing server environment variable SERVER_NAME: {$smarty.server.SERVER_NAME}
+            <!-- Author -->
+            <p class="lead">
+                by <a href="#">{$smarty.post.author}</a>
+            </p>
 
-    The value of {ldelim}$Name{rdelim} is <b>{$Name}</b>
+            <hr>
 
-variable modifier example of {ldelim}$Name|upper{rdelim}
+            <!-- Date/Time -->
+            <p><span class="glyphicon glyphicon-time"></span> Posted on {$smarty.post.date}</p>
 
-<b>{$Name|upper}</b>
+            <hr>
 
+            <!-- Preview Image -->
+            <img class="img-responsive" src="http://placehold.it/900x300" alt="">
 
-An example of a section loop:
+            <!-- Caption -->
+            <p class="lead">{$smarty.post.caption}</p>
 
-    {section name=outer
-    loop=$FirstName}
-        {if $smarty.section.outer.index is odd by 2}
-            {$smarty.section.outer.rownum} . {$FirstName[outer]} {$LastName[outer]}
-        {else}
-            {$smarty.section.outer.rownum} * {$FirstName[outer]} {$LastName[outer]}
-        {/if}
-        {sectionelse}
-        none
-    {/section}
+            <hr>
 
-    An example of section looped key values:
+            <!-- Post Content -->
+            <p>{$smarty.post.story}</p>
 
-    {section name=sec1 loop=$contacts}
-        phone: {$contacts[sec1].phone}
-        <br>
+            <hr>
 
-            fax: {$contacts[sec1].fax}
-        <br>
-
-            cell: {$contacts[sec1].cell}
-        <br>
-    {/section}
-    <p>
-
-        testing strip tags
-        {strip}
-<table border=0>
-    <tr>
-        <td>
-            <A HREF="{$SCRIPT_NAME}">
-                <font color="red">This is a test </font>
-            </A>
-        </td>
-    </tr>
-</table>
-    {/strip}
-
-</PRE>
-
-This is an example of the html_select_date function:
-
-<form>
-    {html_select_date start_year=1998 end_year=2010}
-</form>
-
-This is an example of the html_select_time function:
-
-<form>
-    {html_select_time use_24_hours=false}
-</form>
-
-This is an example of the html_options function:
-
-<form>
-    <select name=states>
-        {html_options values=$option_values selected=$option_selected output=$option_output}
-    </select>
-</form>
+            <!-- List -->
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="http://placehold.it/64x64" alt="">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">Start Bootstrap
+                        <small>August 25, 2014 at 9:30 PM</small>
+                    </h4>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
 
 {include file="footer.tpl"}
