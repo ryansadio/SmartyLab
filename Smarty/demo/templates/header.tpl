@@ -9,7 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Blog Post - Start Bootstrap Template</title>
+    <!-- TODO: TITLE HERE -->
+    <title></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -27,3 +28,7 @@
 </head>
 
 <body>
+
+<!-- Page Content -->
+<div class="container">
+
